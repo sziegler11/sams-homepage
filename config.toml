@@ -1,0 +1,4 @@
+baseURL = "http://samziegler.me/"
+languageCode = "en-us"
+title = "Sam Ziegler"
+theme = "hugo-coder"
