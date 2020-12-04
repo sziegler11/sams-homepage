@@ -1,4 +1,4 @@
-baseURL = "http://samziegler.me/"
+baseURL = "https://samziegler.me/"
 languageCode = "en-us"
 title = "Sam Ziegler's Homepage"
 theme = "hugo-coder"
@@ -17,7 +17,9 @@ pygmentscodefencesguesssyntax = true
   keywords = "developer,personal"
   colorsheme = "auto"
   avatarurl = "images/sam_on_beach.jpg"
-  hidecolorschemetoggle = false
+  hidecolorschemetoggle = true
+
+  enableTwitterShare = true  # new add
 
 [[params.social]]
   name = "Twitter"
@@ -31,3 +33,9 @@ pygmentscodefencesguesssyntax = true
   weight = 3
   url = "https://www.linkedin.com/in/samuel-ziegler-9567ab18/"
 
+# Menu links
+
+[[menu.main]]
+  name = "Blog"
+  weight = 2
+  url  = "posts/"

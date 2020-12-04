@@ -3,15 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://samziegler.me/categories/</loc>
+    <loc>samziegler.me/categories/</loc>
   </url>
   
   <url>
-    <loc>http://samziegler.me/</loc>
+    <loc>samziegler.me/</loc>
   </url>
   
   <url>
-    <loc>http://samziegler.me/tags/</loc>
+    <loc>samziegler.me/tags/</loc>
   </url>
   
 </urlset>
