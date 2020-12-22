@@ -1,4 +1,4 @@
-baseURL = "https://samziegler.me/"
+baseURL = "http://samziegler.me"
 languageCode = "en-us"
 title = "Sam Ziegler's Homepage"
 theme = "hugo-coder"
@@ -32,6 +32,12 @@ pygmentscodefencesguesssyntax = true
   icon = "fa fa-linkedin fa-2x"
   weight = 3
   url = "https://www.linkedin.com/in/samuel-ziegler-9567ab18/"
+
+[[params.social]]
+  name = "Soundcloud"
+  icon = "fa fa-soundcloud fa-2x"
+  weight = 3
+  url = "https://soundcloud.com/sam-ziegler-1/"
 
 # Menu links
 

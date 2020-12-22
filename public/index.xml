@@ -2,9 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Sam Ziegler&#39;s Homepage</title>
-    <link>samziegler.me/</link>
+    <link>http://samziegler.me/</link>
     <description>Recent content on Sam Ziegler&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>http://samziegler.me/posts/hello-world/</link>
+      <pubDate>Thu, 03 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://samziegler.me/posts/hello-world/</guid>
+      <description>Welcome to my blog! I hope to share my thoughts on programming, music, math, bitcoin, cryptography, and more.</description>
+    </item>
+    
   </channel>
 </rss>

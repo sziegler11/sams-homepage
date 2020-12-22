@@ -3,15 +3,26 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>samziegler.me/categories/</loc>
+    <loc>http://samziegler.me/posts/hello-world/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>samziegler.me/</loc>
+    <loc>http://samziegler.me/posts/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>samziegler.me/tags/</loc>
+    <loc>http://samziegler.me/</loc>
+    <lastmod>2020-12-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://samziegler.me/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>http://samziegler.me/tags/</loc>
   </url>
   
 </urlset>
