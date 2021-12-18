@@ -6,7 +6,16 @@
     <description>Recent content on Sam Ziegler&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 03 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 23 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Some learnings about Bitcoin</title>
+      <link>http://samziegler.me/posts/some-learnings-about-bitcoin/</link>
+      <pubDate>Wed, 23 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>http://samziegler.me/posts/some-learnings-about-bitcoin/</guid>
+      <description>In 2016, I attended a talk given by Andreas Antonopolous at a Bitcoin meetup in downtown San Francisco. Coming into the talk, I had thought very little about Bitcoin, or &amp;ldquo;blockchain&amp;rdquo; technology more generally. The way that Andreas spoke about Bitcoin and the economic, social, and technical implications that it has for our world was nothing short of inspiring. I emerged with a profound curiosity for this new monetary technology and what it might mean about the future.</description>
+    </item>
+    
     <item>
       <title>Hello World</title>
       <link>http://samziegler.me/posts/hello-world/</link>

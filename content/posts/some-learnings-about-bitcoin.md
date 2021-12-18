@@ -17,7 +17,7 @@ To my current understanding, these are the key aspects of what makes Bitcoin imp
 * No one has the power to manipulate it. Decentralization ensures that the power of any individual, or small group, is limited.
 * Furthermore, everything above becomes more true as more users and nodes join the network.
 
-I know I am missing a lot here. I also am not as prepared to refute every, or even some common objections to its use as some more experience bitcoiners might be. Its future is far from certain; while governments can't kill it as such, they can create regulations that make its use onerous. However, its resilience from past attacks and crises and the value it offers to the world as a truly superior monetary technology lead me to believe that it will only play a more and more important role in the world.
+I know I am missing a lot here. I also am not as prepared to refute every, or even some common objections to its use as some more experience bitcoiners might be. Its future is far from certain; while governments can't kill it as such, they can create regulations that make its use onerous. However, its resilience from past attacks and crises and the value it offers as a truly superior monetary technology lead me to believe that it will only play a more and more important role in the world.
 
 Below are some of the resources that I've been using to learn about Bitcoin. I hope you find them as useful as I have!
 
