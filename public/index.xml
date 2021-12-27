@@ -5,8 +5,19 @@
     <link>http://samziegler.me/</link>
     <description>Recent content on Sam Ziegler&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Wed, 23 Dec 2020 00:00:00 +0000</lastBuildDate><atom:link href="http://samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language>
+    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Taproot: what is it and what does it mean for Bitcoin?</title>
+      <link>http://samziegler.me/posts/taproot/</link>
+      <pubDate>Sat, 18 Dec 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://samziegler.me/posts/taproot/</guid>
+      <description>In November 2021, at block height 709,632, the Taproot upgrade became active on the Bitcoin network, meaning this block was the first for which Bitcoin nodes started enforcing the updated consensus rules. But what is Taproot, and how did it come to be adopted on the network?
+There are really several innovations bundled under the umbrella of “Taproot.” These include:
+ Schnorr signatures (BIP-340) Taproot outputs (BIP-341) Tapscript (BIP-342)  I won&amp;rsquo;t attempt to describe all of these in one post, so for now we will focus on the first of these: a new cryptographic signature scheme for Bitcoin.</description>
+    </item>
+    
     <item>
       <title>Some learnings about Bitcoin</title>
       <link>http://samziegler.me/posts/some-learnings-about-bitcoin/</link>
