@@ -68,3 +68,5 @@ node_modules/
 # ignore public 
 /public
 
+# DS_Store
+**/*.DS_Store
