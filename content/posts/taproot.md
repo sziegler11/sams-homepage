@@ -78,7 +78,7 @@ The original individual public keys $P_i$'s are then perturbed by these factors 
 
 $$P_{agg} = \sum_{i\leq n} a_iP_i$$
 
-this is crucial, since it requires all parties to submit their public keys *before* they are perturbed and combined. This prevents the sort of key-cancellation attacked described in the above link.
+This is crucial, since it requires all parties to submit their public keys *before* they are perturbed and combined. This prevents the sort of key-cancellation attacked described in the above link.
 
 Next, the parties generate randomness on their own and commit to their random nonces. Each party generates nonce, point pairs $(k_i, R_i)$. Then everyone exchanges hashes of their nonce points:
 
