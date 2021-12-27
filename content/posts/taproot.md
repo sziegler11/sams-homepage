@@ -76,7 +76,7 @@ $$ a_i = H(L, P_i) $$
 
 The original individual public keys $P_i$'s are then perturbed by these factors and aggregated into a public key:
 
-$$P_{agg} = \sum_{i\leq n} a_i'P_i$$
+$$P_{agg} = \sum_{i\leq n} a_iP_i$$
 
 this is crucial, since it requires all parties to submit their public keys *before* they are perturbed and combined. This prevents the sort of key-cancellation attacked described in the above link.
 

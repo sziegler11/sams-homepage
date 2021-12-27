@@ -1,8 +1,8 @@
 baseURL = "http://samziegler.me"
-languageCode = "en-us"
+languageCode = "en"
 title = "Sam Ziegler's Homepage"
 theme = "hugo-coder"
-defaultcontentlanguage = "en"
+defaultContentLanguage = "en"
 
 paginate = 20
 
@@ -15,33 +15,43 @@ pygmentscodefencesguesssyntax = true
   info = "Machine Learning Engineer"
   description = "Sam Ziegler's Homepage"
   keywords = "developer,personal"
-  colorsheme = "auto"
   avatarurl = "images/sam_on_beach.jpg"
-  hidecolorschemetoggle = true
+  katex = true
 
   enableTwitterShare = true  # new add
 
+  customSCSS = ["fork-awesome/fork-awesome.scss"]
+
+[taxonomies]
+  category = "categories"
+  series = "series"
+  tag = "tags"
+  author = "authors"
+
 [[params.social]]
   name = "Twitter"
-  icon = "fa fa-twitter fa-2x"
-  weight = 3
+  icon = "fa fa-2x fa-twitter"
+  weight = 1
   url = "https://twitter.com/thesamziegler/"
 
 [[params.social]]
   name = "LinkedIn"
-  icon = "fa fa-linkedin fa-2x"
-  weight = 3
+  icon = "fa fa-2x fa-linkedin"
+  weight = 2
   url = "https://www.linkedin.com/in/samuel-ziegler-9567ab18/"
 
 [[params.social]]
   name = "Soundcloud"
-  icon = "fa fa-soundcloud fa-2x"
+  icon = "fa fa-2x fa-soundcloud"
   weight = 3
   url = "https://soundcloud.com/sam-ziegler-1/"
 
 # Menu links
 
-[[menu.main]]
+[languages.en]
+languageName = ":us:"
+
+[[languages.en.menu.main]]
   name = "Blog"
-  weight = 2
+  weight = 1
   url  = "posts/"
