@@ -1,5 +1,5 @@
 ---
-draft: true
+draft: false
 math: true
 date: "2021-12-18"
 title: "Taproot: what is it and what does it mean for Bitcoin?" 
