@@ -6,7 +6,16 @@
     <description>Recent content on Sam Ziegler&#39;s Homepage</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 18 Dec 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Apr 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://samziegler.me/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Merkle trees</title>
+      <link>http://samziegler.me/posts/merkle-trees/</link>
+      <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://samziegler.me/posts/merkle-trees/</guid>
+      <description>Merkle Trees and MAST    Merkelized Abstract Syntax Trees (MAST) is a scheme for pay-to-script-hash outputs which critically improves the privacy and smart contract capabilities of Bitcoin. The locking script of a UTXO can be a complicated contract, with many possible ways of being spent. MAST ensures that the only part of the script that makes it into the blockchain is the part which is actually satisfied by a spender.</description>
+    </item>
+    
     <item>
       <title>Taproot: what is it and what does it mean for Bitcoin?</title>
       <link>http://samziegler.me/posts/taproot/</link>

@@ -1,7 +1,7 @@
 ---
-draft: true
+draft: false
 math: true
-date: "2022-03-06"
+date: "2022-04-10"
 title: "Merkle trees" 
 slug: "merkle-trees"
 ---
