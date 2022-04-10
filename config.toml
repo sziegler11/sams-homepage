@@ -12,7 +12,7 @@ pygmentscodefencesguesssyntax = true
 
 [params]
   author = "Sam Ziegler"
-  info = "Machine Learning Engineer"
+  info = ""
   description = "Sam Ziegler's Homepage"
   keywords = "developer,personal"
   avatarurl = "images/sam_on_beach.jpg"
