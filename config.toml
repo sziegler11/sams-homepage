@@ -1,26 +1,22 @@
 baseURL = "http://samziegler.me"
 languageCode = "en"
 title = "Sam Ziegler's Homepage"
-theme = "hugo-coder"
+# theme removed — using custom layouts
 defaultContentLanguage = "en"
 
 paginate = 20
 
-pygmentsstyle = "bw"
+pygmentsstyle = "monokai"
 pygmentscodefences = true
 pygmentscodefencesguesssyntax = true
 
 [params]
   author = "Sam Ziegler"
-  info = ""
+  tagline = "Developer. Builder. Curious mind."
   description = "Sam Ziegler's Homepage"
   keywords = "developer,personal"
   avatarurl = "images/sam_on_beach.jpg"
   katex = true
-
-  enableTwitterShare = true  # new add
-
-  customSCSS = ["fork-awesome/fork-awesome.scss"]
 
 [taxonomies]
   category = "categories"
@@ -30,26 +26,24 @@ pygmentscodefencesguesssyntax = true
 
 [[params.social]]
   name = "Twitter"
-  icon = "fa fa-2x fa-twitter"
+  icon = "twitter"
   weight = 1
   url = "https://twitter.com/thesamziegler/"
 
 [[params.social]]
   name = "LinkedIn"
-  icon = "fa fa-2x fa-linkedin"
+  icon = "linkedin"
   weight = 2
   url = "https://www.linkedin.com/in/samuel-ziegler-9567ab18/"
 
 [[params.social]]
   name = "Soundcloud"
-  icon = "fa fa-2x fa-soundcloud"
+  icon = "soundcloud"
   weight = 3
   url = "https://soundcloud.com/sam-ziegler-1/"
 
-# Menu links
-
 [languages.en]
-languageName = ":us:"
+languageName = "en"
 
 [[languages.en.menu.main]]
   name = "Blog"

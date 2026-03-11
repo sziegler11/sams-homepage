@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div class="post-list">
+  <h1 class="post-list-title">{{ .Title | default "Blog" }}</h1>
+
+  {{ range .Pages.ByDate.Reverse }}
+  <a href="{{ .Permalink }}" class="post-card">
+    <h2 class="post-card-title">{{ .Title }}</h2>
+    <div class="post-card-meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      &middot; {{ math.Round (div (countwords .Content) 200.0) }} min read
+    </div>
+    {{ if .Summary }}
+    <p class="post-card-excerpt">{{ .Summary | truncate 120 }}</p>
+    {{ end }}
+  </a>
+  {{ end }}
+</div>
+{{ end }}

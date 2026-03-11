@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en" }}">
+<head>
+  {{- partial "head.html" . -}}
+  {{- partial "dark-mode.html" . -}}
+</head>
+<body>
+  <a href="#main-content" class="sr-only">Skip to content</a>
+
+  {{- partial "nav.html" . -}}
+
+  <main id="main-content">
+    {{- block "main" . }}{{ end -}}
+  </main>
+
+  {{- partial "footer.html" . -}}
+
+  {{ $js := resources.Get "js/main.js" | minify | fingerprint }}
+  <script src="{{ $js.RelPermalink }}"></script>
+</body>
+</html>
