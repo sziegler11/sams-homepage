@@ -8,7 +8,7 @@
 
   toggle.addEventListener('click', function() {
     var current = document.documentElement.getAttribute('data-theme');
-    var next = current === 'light' ? null : 'light';
+    var next = current === 'dark' ? null : 'dark';
 
     if (next) {
       document.documentElement.setAttribute('data-theme', next);

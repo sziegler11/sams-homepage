@@ -10,7 +10,7 @@
       &middot; {{ math.Round (div (countwords .Content) 200.0) }} min read
     </div>
     {{ if .Summary }}
-    <p class="post-card-excerpt">{{ .Summary | truncate 120 }}</p>
+    <p class="post-card-excerpt">{{ .Summary | plainify | truncate 120 }}</p>
     {{ end }}
   </a>
   {{ end }}
