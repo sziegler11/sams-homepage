@@ -12,7 +12,6 @@ pygmentscodefencesguesssyntax = true
 
 [params]
   author = "Sam Ziegler"
-  tagline = "Developer. Builder. Curious mind."
   description = "Sam Ziegler's Homepage"
   keywords = "developer,personal"
   avatarurl = "images/sam_on_beach.jpg"
