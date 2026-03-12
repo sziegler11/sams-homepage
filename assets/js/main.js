@@ -40,12 +40,12 @@
 })();
 
 // =============================================================================
-// Animated Gradient Mesh Background
+// Animated Geometric Background
 // =============================================================================
 
 (function() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  if (document.querySelector('.post-list')) return;
+  if (!document.querySelector('.hero')) return;
 
   var canvas = document.createElement('canvas');
   canvas.id = 'bg-canvas';
@@ -53,11 +53,12 @@
   document.body.prepend(canvas);
 
   var ctx = canvas.getContext('2d');
-  var w, h;
+  var w, h, diag;
 
   function resize() {
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
+    diag = Math.sqrt(w * w + h * h);
   }
   resize();
 
@@ -67,58 +68,86 @@
     resizeTimer = setTimeout(resize, 150);
   });
 
+  // Muted, darker palette — slate blues, charcoal greens, deep amber, cool grey
   var lightColors = [
-    [217, 169, 78, 0.3],
-    [180, 100, 140, 0.25],
-    [100, 170, 120, 0.22],
-    [80, 130, 210, 0.28]
+    [70, 90, 120, 0.12],
+    [140, 110, 60, 0.09],
+    [55, 95, 85, 0.10],
+    [100, 75, 110, 0.08],
+    [85, 100, 65, 0.09]
   ];
 
   var darkColors = [
-    [60, 60, 200, 0.35],
-    [30, 160, 150, 0.28],
-    [150, 50, 170, 0.28],
-    [200, 150, 50, 0.22]
+    [40, 60, 140, 0.16],
+    [20, 110, 110, 0.12],
+    [110, 45, 130, 0.13],
+    [150, 120, 40, 0.10],
+    [50, 80, 120, 0.11]
   ];
 
-  // 6 blobs for richer overlapping
-  var blobs = [
-    { xFreq: 0.00023, yFreq: 0.00031, xAmp: 0.35, yAmp: 0.30, phase: 0,    rFreq: 0.00015 },
-    { xFreq: 0.00029, yFreq: 0.00019, xAmp: 0.30, yAmp: 0.40, phase: 1.2,  rFreq: 0.00012 },
-    { xFreq: 0.00037, yFreq: 0.00026, xAmp: 0.40, yAmp: 0.25, phase: 2.8,  rFreq: 0.00018 },
-    { xFreq: 0.00017, yFreq: 0.00041, xAmp: 0.25, yAmp: 0.35, phase: 4.1,  rFreq: 0.00014 },
-    { xFreq: 0.00033, yFreq: 0.00015, xAmp: 0.32, yAmp: 0.28, phase: 5.5,  rFreq: 0.00011 },
-    { xFreq: 0.00021, yFreq: 0.00035, xAmp: 0.28, yAmp: 0.38, phase: 0.7,  rFreq: 0.00016 }
+  // Each shard is a drifting polygon — triangles and quads
+  var shards = [
+    { sides: 3, xFreq: 0.00018, yFreq: 0.00025, xAmp: 0.30, yAmp: 0.25, phase: 0,   rotFreq: 0.00008, scale: 0.45 },
+    { sides: 4, xFreq: 0.00024, yFreq: 0.00016, xAmp: 0.35, yAmp: 0.35, phase: 1.4, rotFreq: 0.00006, scale: 0.55 },
+    { sides: 3, xFreq: 0.00031, yFreq: 0.00022, xAmp: 0.25, yAmp: 0.30, phase: 2.9, rotFreq: 0.00010, scale: 0.38 },
+    { sides: 4, xFreq: 0.00014, yFreq: 0.00033, xAmp: 0.28, yAmp: 0.20, phase: 4.3, rotFreq: 0.00005, scale: 0.50 },
+    { sides: 3, xFreq: 0.00027, yFreq: 0.00012, xAmp: 0.32, yAmp: 0.28, phase: 5.7, rotFreq: 0.00009, scale: 0.42 }
   ];
 
   function draw(t) {
     ctx.clearRect(0, 0, w, h);
-    ctx.globalCompositeOperation = 'lighter';
+    ctx.globalCompositeOperation = 'source-over';
 
     var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     var colors = isDark ? darkColors : lightColors;
 
-    for (var i = 0; i < blobs.length; i++) {
-      var b = blobs[i];
+    for (var i = 0; i < shards.length; i++) {
+      var s = shards[i];
       var c = colors[i % colors.length];
-      // compound sinusoidal paths — each axis mixes two frequencies for non-repeating drift
-      var x = w * 0.5
-        + Math.sin(t * b.xFreq + b.phase) * w * b.xAmp
-        + Math.sin(t * b.xFreq * 0.7 + b.phase * 2.3) * w * b.xAmp * 0.3;
-      var y = h * 0.5
-        + Math.cos(t * b.yFreq + b.phase) * h * b.yAmp
-        + Math.cos(t * b.yFreq * 0.6 + b.phase * 1.7) * h * b.yAmp * 0.3;
-      // radius breathes slowly
-      var baseR = Math.max(w, h) * 0.38;
-      var radius = baseR + Math.sin(t * b.rFreq + b.phase) * baseR * 0.15;
 
-      var grad = ctx.createRadialGradient(x, y, 0, x, y, radius);
+      // compound drift for non-repeating paths
+      var cx = w * 0.5
+        + Math.sin(t * s.xFreq + s.phase) * w * s.xAmp
+        + Math.sin(t * s.xFreq * 0.6 + s.phase * 2.1) * w * s.xAmp * 0.25;
+      var cy = h * 0.5
+        + Math.cos(t * s.yFreq + s.phase) * h * s.yAmp
+        + Math.cos(t * s.yFreq * 0.7 + s.phase * 1.5) * h * s.yAmp * 0.25;
+
+      // slow rotation
+      var angle = t * s.rotFreq + s.phase;
+      var radius = diag * s.scale * 0.5;
+
+      // build polygon vertices
+      var verts = [];
+      for (var v = 0; v < s.sides; v++) {
+        var a = angle + (v / s.sides) * Math.PI * 2;
+        // stretch irregularly for more angular feel
+        var stretch = 1.0 + 0.3 * Math.sin(a * 2.0 + s.phase);
+        verts.push({
+          x: cx + Math.cos(a) * radius * stretch,
+          y: cy + Math.sin(a) * radius * stretch
+        });
+      }
+
+      // linear gradient along the rotation axis — sharp directional light
+      var gx0 = cx + Math.cos(angle) * radius;
+      var gy0 = cy + Math.sin(angle) * radius;
+      var gx1 = cx - Math.cos(angle) * radius;
+      var gy1 = cy - Math.sin(angle) * radius;
+
+      var grad = ctx.createLinearGradient(gx0, gy0, gx1, gy1);
       grad.addColorStop(0, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + c[3] + ')');
-      grad.addColorStop(0.4, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (c[3] * 0.5) + ')');
+      grad.addColorStop(0.5, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + (c[3] * 0.4) + ')');
       grad.addColorStop(1, 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',0)');
 
+      ctx.beginPath();
+      ctx.moveTo(verts[0].x, verts[0].y);
+      for (var v = 1; v < verts.length; v++) {
+        ctx.lineTo(verts[v].x, verts[v].y);
+      }
+      ctx.closePath();
       ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, w, h);
+      ctx.fill();
     }
 
     requestAnimationFrame(draw);
