@@ -45,6 +45,7 @@
 
 (function() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (document.querySelector('.post-list')) return;
 
   var canvas = document.createElement('canvas');
   canvas.id = 'bg-canvas';
