@@ -73,5 +73,11 @@ node_modules/
 
 .hugo_build.lock
 
+# Hugo generated assets cache
+resources/_gen/
+
+# Playwright screenshots
+.playwright-mcp/
+
 # Local readme
 .README.md

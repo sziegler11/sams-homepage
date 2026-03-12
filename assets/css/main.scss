@@ -748,6 +748,162 @@ a {
 }
 
 // =============================================================================
+// Gradient Mesh Background
+// =============================================================================
+
+#bg-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+// =============================================================================
+// Resume Timeline
+// =============================================================================
+
+.resume-section {
+  padding: var(--space-10) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.resume-header {
+  margin-bottom: var(--space-8);
+}
+
+.resume-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-1);
+}
+
+.resume-subtitle {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.timeline-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--space-3);
+}
+
+.timeline-dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg-primary), 0 0 0 5px var(--accent);
+  flex-shrink: 0;
+  transition: box-shadow var(--transition), background var(--transition);
+}
+
+.timeline-line {
+  display: block;
+  width: 1px;
+  flex-grow: 1;
+  background: var(--border);
+  margin-top: var(--space-1);
+}
+
+.timeline-entry--last .timeline-line {
+  display: none;
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+
+  &:hover {
+    border-color: var(--accent);
+    transform: translateX(4px);
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+}
+
+.timeline-date {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.timeline-role {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: var(--space-1);
+}
+
+.timeline-company {
+  color: var(--accent);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.timeline-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin-bottom: 0;
+}
+
+// Alternating layout on desktop
+@media (min-width: 769px) {
+  .timeline-entry:nth-child(even) {
+    grid-template-columns: 1fr 80px;
+
+    .timeline-marker {
+      order: 2;
+    }
+
+    .timeline-content {
+      order: 1;
+      text-align: right;
+
+      &:hover {
+        transform: translateX(-4px);
+      }
+    }
+  }
+}
+
+// =============================================================================
 // Reduced Motion
 // =============================================================================
 
@@ -757,6 +913,15 @@ a {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  #bg-canvas {
+    display: none;
+  }
+
+  .timeline-entry {
+    opacity: 1;
+    transform: none;
   }
 }
 
@@ -808,6 +973,28 @@ a {
 
   .section {
     padding: var(--space-6) 0;
+  }
+
+  .resume-section {
+    padding: var(--space-6) 0;
+  }
+
+  .timeline-entry,
+  .timeline-entry:nth-child(even) {
+    grid-template-columns: 40px 1fr;
+  }
+
+  .timeline-entry:nth-child(even) .timeline-marker {
+    order: unset;
+  }
+
+  .timeline-entry:nth-child(even) .timeline-content {
+    order: unset;
+    text-align: left;
+  }
+
+  .timeline-content {
+    padding: var(--space-3);
   }
 }
 
