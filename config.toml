@@ -41,6 +41,12 @@ pygmentscodefencesguesssyntax = true
   weight = 3
   url = "https://soundcloud.com/sam-ziegler-1/"
 
+[[params.social]]
+  name = "GitHub"
+  icon = "github"
+  weight = 4
+  url = "https://github.com/sziegler11"
+
 [languages.en]
 languageName = "en"
 
